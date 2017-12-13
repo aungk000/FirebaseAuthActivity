@@ -21,7 +21,7 @@ import me.aungkooo.firebase.R;
 
 public abstract class FirebaseAuthActivity extends BaseActivity
 {
-    // request can be variable
+    // request code can be variable
     public static final int REQUEST_GOOGLE_SIGN_IN = 600;
     private GoogleApiClient googleApiClient;
     private FirebaseAuth firebaseAuth;
@@ -40,6 +40,10 @@ public abstract class FirebaseAuthActivity extends BaseActivity
 
     public void setEmailSignUpListener(EmailSignUpListener emailSignUpListener) {
         this.emailSignUpListener = emailSignUpListener;
+    }
+
+    public void setGoogleSignOutListener(GoogleSignOutListener googleSignOutListener) {
+        this.googleSignOutListener = googleSignOutListener;
     }
 
     public FirebaseAuth getFirebaseAuth()

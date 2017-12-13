@@ -59,7 +59,6 @@ public class SignInActivity extends FirebaseAuthActivity implements FirebaseAuth
 
         if(getFirebaseAuth().getCurrentUser() != null)
         {
-            // TODO something with current user
             changeActivityAndFinish(MainActivity.class);
         }
     }
@@ -142,8 +141,13 @@ public class SignInActivity extends FirebaseAuthActivity implements FirebaseAuth
         String username = fUser.getDisplayName();
         String email = fUser.getEmail();
         String userId = fUser.getUid();
+        String photoUrl = null;
+        if(fUser.getPhotoUrl() != null)
+        {
+            photoUrl = fUser.getPhotoUrl().toString();
+        }
 
-        User user = new User(username, email);
+        User user = new User(username, email, photoUrl);
 
         userRef.child(userId).setValue(user);
     }

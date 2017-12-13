@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
+import butterknife.ButterKnife;
 import me.aungkooo.firebase.R;
 
 
@@ -55,6 +56,30 @@ public abstract class BaseActivity extends AppCompatActivity
         }
     }
 
+    public void setSupportActionBarTitle(String title)
+    {
+        if(getSupportActionBar() != null)
+        {
+            getSupportActionBar().setTitle(title);
+        }
+    }
+
+    public void setSupportActionBarSubTitle(@StringRes int title)
+    {
+        if(getSupportActionBar() != null)
+        {
+            getSupportActionBar().setSubtitle(title);
+        }
+    }
+
+    public void setSupportActionBarSubTitle(String title)
+    {
+        if(getSupportActionBar() != null)
+        {
+            getSupportActionBar().setSubtitle(title);
+        }
+    }
+
     public void changeActivityAndFinish(Class to)
     {
         Intent intent = new Intent(this, to);
@@ -65,6 +90,7 @@ public abstract class BaseActivity extends AppCompatActivity
         finish();
     }
 
+    // ButterKnife
     @SuppressWarnings("unchecked")
     public <V extends View> V findById(@IdRes int id)
     {

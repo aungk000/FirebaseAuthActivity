@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="margin_normal">16dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
     <dimen name="padding_normal">16dp</dimen>
+    <dimen name="padding_small">8dp</dimen>
+
+    <dimen name="card_elevation">2dp</dimen>
+    <dimen name="card_elevation_max">4dp</dimen>
+    <dimen name="card_corner">4dp</dimen>
 </resources>

@@ -1,5 +1,6 @@
 package me.aungkooo.firebase.activity;
 
+
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -20,7 +21,7 @@ import me.aungkooo.firebase.model.User;
 
 public class SignUpActivity extends FirebaseAuthActivity implements FirebaseAuthActivity.EmailSignUpListener
 {
-    private EditText editEmail, editPassword;
+    private EditText editEmail, editPassword, editUsername;
     private DatabaseReference userRef;
 
     @Override
@@ -37,6 +38,7 @@ public class SignUpActivity extends FirebaseAuthActivity implements FirebaseAuth
 
         editEmail = findById(R.id.edit_email_sign_up);
         editPassword = findById(R.id.edit_password_sign_up);
+        editUsername = findById(R.id.edit_username_sign_up);
     }
 
     @Override
@@ -47,7 +49,7 @@ public class SignUpActivity extends FirebaseAuthActivity implements FirebaseAuth
 
     public void signUpWithEmail(View v)
     {
-        if(!Utility.isValidForm(editEmail, editPassword))
+        if(!Utility.isValidForm(editUsername, editEmail, editPassword))
         {
             return;
         }
@@ -87,12 +89,17 @@ public class SignUpActivity extends FirebaseAuthActivity implements FirebaseAuth
 
     private void addNewUser(FirebaseUser fUser)
     {
-        String username = fUser.getDisplayName();
+        String username = editUsername.getText().toString();
         String email = fUser.getEmail();
         String password = editPassword.getText().toString();
         String userId = fUser.getUid();
+        String photoUrl = null;
+        if(fUser.getPhotoUrl() != null)
+        {
+             photoUrl = fUser.getPhotoUrl().toString();
+        }
 
-        User user = new User(username, email, password);
+        User user = new User(username, email, password, photoUrl);
 
         userRef.child(userId).setValue(user);
     }

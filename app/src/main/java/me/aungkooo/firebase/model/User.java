@@ -1,5 +1,6 @@
 package me.aungkooo.firebase.model;
 
+
 import com.google.firebase.database.IgnoreExtraProperties;
 
 
@@ -9,20 +10,24 @@ public class User
     public static final String USERS = "users";
     public static final String USERNAME = "username";
     public static final String EMAIL = "email";
-    private String username, email, password;
+    private String username, email, password, photoUrl;
 
     public User() {
     }
 
-    public User(String username, String email) {
+    // google account
+    public User(String username, String email, String photoUrl) {
         this.username = username;
         this.email = email;
+        this.photoUrl = photoUrl;
     }
 
-    public User(String username, String email, String password) {
+    // email
+    public User(String username, String email, String password, String photoUrl) {
         this.username = username;
         this.email = email;
         this.password = password;
+        this.photoUrl = photoUrl;
     }
 
     public String getUsername() {
@@ -47,5 +52,13 @@ public class User
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getPhotoUrl() {
+        return photoUrl;
+    }
+
+    public void setPhotoUrl(String photoUrl) {
+        this.photoUrl = photoUrl;
     }
 }

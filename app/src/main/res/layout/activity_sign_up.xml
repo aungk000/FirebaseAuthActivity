@@ -12,6 +12,20 @@
         android:layout_height="wrap_content">
 
         <EditText
+            android:id="@+id/edit_username_sign_up"
+            android:hint="@string/username"
+            android:inputType="textCapWords"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_marginBottom="@dimen/margin_normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
             android:id="@+id/edit_email_sign_up"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
