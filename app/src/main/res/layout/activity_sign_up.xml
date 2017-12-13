@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:padding="@dimen/padding_normal"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_marginBottom="@dimen/margin_normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/edit_email_sign_up"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        app:passwordToggleEnabled="true"
+        app:passwordToggleDrawable="@drawable/ic_password_toggle"
+        app:passwordToggleTint="@color/colorPrimary"
+        android:layout_marginBottom="@dimen/margin_normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/edit_password_sign_up"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:onClick="signUpWithEmail"
+        android:text="@string/sign_up"
+        android:textColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize" />
+
+</LinearLayout>
