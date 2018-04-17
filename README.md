@@ -19,8 +19,6 @@ package name (Example: com.google.firebase).
 Then it will let you download a google-services.json file.
 Download and place it in app folder.
 
-More detailed instructions will come soon.
-
 Dependencies
 -----------------
 
